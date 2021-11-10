@@ -1,0 +1,74 @@
+@import url("sobremi.css");
+
+main{
+    background-image: url("../img/fondocv.jpg");
+    background-position: 50%;
+    background-size: cover;
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+#cv{
+    font-family: "Panton-regular";
+    display: inline-flex;
+    justify-items:center;
+    align-items: center;
+}
+
+.block-pad {
+    display: flex;
+    justify-content: center;
+    padding: 150px 0 150px 0;
+}
+
+#cv a {
+    display: flex;
+    min-width: 205px;
+    padding: 10px 20px;
+    margin: 0 35px;
+    border-radius: 10px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: "Panton-regular";
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-hover a {
+    background:#8e9aaf;
+}
+
+.btn-hover a:hover {
+    box-shadow: inset 4px 4px 10px -1px rgba(0, 0, 0, 0.2),
+        inset -4px -4px 10px -1px rgba(255, 255, 255, 0.7);
+}
+@media (max-width: 480px) {
+        main{
+        background-image: url("../img/fondocvMovil.jpg");
+        background-position: 50%;
+        background-size: cover;
+        display: table;
+        height: 80%;
+        width: 100%;
+    }
+
+    #fotocv{
+        content:url("");
+    }
+}
+
+@media (min-width: 480px) and
+(max-width: 1024px) {
+
+    main{
+        background-image: url("../img/fondocvTablet.jpg");
+        background-position: 50%;
+        background-size: cover;
+        display: table;
+        height: 70%;
+        width: 100%;
+    }
+}

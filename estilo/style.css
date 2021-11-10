@@ -1,0 +1,179 @@
+@font-face {
+    font-family: "Panton-regular";
+    src: url(../fuentes/Panton-Regular.otf);
+}
+
+body{
+    background-color: #f4efe5;
+}
+
+header{    
+    text-align: center;
+    background-color: #f4efe5;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5%;
+}
+
+nav > ul > li > a{
+    text-decoration: none;
+    font-size: 1.5vw;
+    font-weight: bold;
+    font-family: "Panton-regular";
+    color: black;
+}
+
+nav > ul > li{
+    text-align: center;
+    display: inline;
+    padding: 15px;
+}         
+
+nav li:hover{
+    background-color: #c9ada7;
+    border-radius: 1vw;
+}
+
+nav li > a:hover{
+    color: white;
+}
+
+.foco{
+    color: #c9ada7;
+}
+
+.portada{
+    content:url(../img/portada.png);
+    width: 100%;
+}
+
+
+footer{
+    clear:both;
+    font-family: "Panton-regular";    
+    padding: 30px;
+    text-align: center;
+    background-color: #f4efe5;
+    color:black;
+    font-weight: bold;
+    font-size: 1vw;
+}
+
+footer #nombre{
+    width: 11vw;
+}
+
+footer .media{
+    width: 3vw;
+}
+
+footer #copyright{
+    font-weight: normal;
+}
+
+footer hr{
+    border-color: white;
+    height: 1px;
+}
+
+@media (max-width: 480px) {
+
+    header {
+        width:100%;
+    }
+    
+    nav {
+        width:90%;
+        margin-top:20px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    nav ul li {
+        float:left;
+        padding: 10px;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        font-size: 4vw;
+        font-weight: bold;
+        font-family: "Panton-regular";
+        color: black;
+        display:block;
+    }    
+    
+    nav ul li a:hover {
+        background:#c9ada7;
+        border-radius: 10%;
+    }
+    
+    .portada{
+        content:url(../img/portadaRespMovil.png);
+        width: 100%;
+    }
+
+    footer{
+        clear:both;
+        font-family: "Panton-regular";    
+        padding: 30px;
+        text-align: center;
+        background-color: #f4efe5;
+        color:black;
+        font-weight: bold;
+        font-size: 3.5vw;
+    }
+    
+    footer #nombre{
+        width: 27vw;
+    }
+
+    footer .media{
+        width: 8vw;
+    }
+}
+
+@media (min-width: 480px) and
+(max-width: 1024px) { 
+
+    nav > ul > li > a{
+        text-decoration: none;
+        font-size: 2vw;
+        font-weight: bold;
+        font-family: "Panton-regular";
+        color: black;
+    }
+
+    nav li:hover{
+        background-color: #c9ada7;
+    }   
+
+    .portada{
+        content:url(../img/portadaRespTablet.png);
+        width: 100%;
+    }
+
+    footer{
+        clear:both;
+        font-family: "Panton-regular";    
+        padding: 30px;
+        text-align: center;
+        background-color: #f4efe5;
+        color:black;
+        font-weight: bold;
+        font-size: 2vw;
+    }
+    
+    footer #nombre{
+        width: 27vw;
+    }
+
+    footer .media{
+        width: 6vw;
+    }
+}
+
