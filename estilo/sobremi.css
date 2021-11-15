@@ -1,0 +1,183 @@
+@charset "UTF-8";
+@import url("style.css");
+body {
+  background-color: white;
+}
+
+main {
+  text-align: center;
+  font-family: "Panton-regular";
+}
+
+/*el color de fondo del menú a partir de esta página cambia a blanco*/
+header {
+  background-color: white;
+  padding-bottom: 20px;
+}
+
+/*imagenes de título de cada artículo*/
+section .formacion > img {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section .experiencia > img {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section .tecnologias > img {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section .aptitudes > img {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/*contenido en texto de cada artículo*/
+.contenido {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contenido p {
+  font-size: 1.2vw;
+  text-align: justify;
+}
+
+/*contenido en columnas*/
+.contenidoCol, .contenidoCol2 {
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contenidoCol > div, .contenidoCol2 > div {
+  text-align: justify;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 330px;
+  font-size: 1.2vw;
+}
+
+/*pie de página*/
+footer {
+  font-family: "Panton-regular";
+  font-weight: bold;
+  font-size: 1vw;
+  clear: both;
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+
+/*responsive móvil*/
+@media (max-width: 480px) {
+  section .TitFormacion {
+    content: url("../img/formacion.png");
+  }
+  section .TitExperiencia {
+    content: url("../img/experiencia.png");
+  }
+  section .TitTecnologias {
+    content: url("../img/tecnologias.png");
+  }
+  section .TitAptitudes {
+    content: url("../img/aptitudes.png");
+  }
+  .contenido {
+    margin-left: 30px;
+    margin-right: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .contenido p {
+    font-size: 3vw;
+    text-align: justify;
+  }
+  .contenidoCol > div, .contenidoCol2 > div {
+    text-align: start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 330px;
+    font-size: 3vw;
+  }
+  footer {
+    font-family: "Panton-regular";
+    font-weight: bold;
+    font-size: 3vw;
+    clear: both;
+    text-align: center;
+    color: black;
+    background-color: white;
+  }
+}
+
+/*responsive tablet*/
+@media (min-width: 480px) and (max-width: 1024px) {
+  section .TitFormacion {
+    content: url("../img/formacion3.png");
+  }
+  section .TitExperiencia {
+    content: url("../img/experiencia3.png");
+  }
+  section .TitTecnologias {
+    content: url("../img/tecnologias3.png");
+  }
+  section .TitAptitudes {
+    content: url("../img/aptitudes3.png");
+  }
+  .contenido p {
+    font-size: 2vw;
+    text-align: justify;
+  }
+  .contenidoCol > div, .contenidoCol2 > div {
+    text-align: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 330px;
+    font-size: 2vw;
+  }
+  footer {
+    font-family: "Panton-regular";
+    font-weight: bold;
+    font-size: 2vw;
+    clear: both;
+    text-align: center;
+    color: black;
+    background-color: white;
+  }
+}
+/*# sourceMappingURL=sobremi.css.map */

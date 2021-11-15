@@ -1,0 +1,166 @@
+@import url("style.css");
+@import "_variables.scss";
+
+$tamanoMovil: 480px;
+$tamanoTablet: 1024px;
+$letraWeb: "Panton-regular";
+
+$contenido: (
+    texto: 1.2vw,
+    textoMovil: 3vw,
+    textoTablet: 2vw
+);
+
+@mixin centrado{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+
+body{
+    background-color: white;
+}
+
+main{
+    text-align: center;
+    font-family: $letraWeb;
+}
+
+/*el color de fondo del menú a partir de esta página cambia a blanco*/
+header{
+    background-color: white;
+    padding-bottom: 20px;
+}
+
+/*imagenes de título de cada artículo*/
+
+@each $article in (formacion, experiencia, tecnologias, aptitudes) {
+  section .#{$article} > img{
+    @include centrado;
+  }
+}
+
+/*contenido en texto de cada artículo*/
+.contenido{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+    & p{
+        font-size: map-get($contenido, texto);
+        text-align: justify;
+    }
+}
+
+/*contenido en columnas*/
+.contenidoCol, .contenidoCol2{
+    font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   
+}
+
+.contenidoCol > div, .contenidoCol2 > div{
+    text-align: justify;
+    align-items: center;  
+    width: 330px;
+    font-size: map-get($contenido, texto);
+}
+
+/*pie de página*/
+footer{
+    font: {
+        family: $letraWeb;
+        weight: bold;
+        size: 1vw;
+    }
+    clear:both;
+    text-align: center;
+    color:black;
+    background-color: white;
+}
+
+/*responsive móvil*/
+@media (max-width: $tamanoMovil) {
+    @each $img, $url in (TitFormacion, formacion),
+                        (TitExperiencia, experiencia),  
+                        (TitTecnologias, tecnologias),
+                        (TitAptitudes, aptitudes){                
+        section .#{$img}{
+            content:url("../img/#{$url}.png");
+        }
+    }
+
+    .contenido{
+        margin: {
+            left: 30px;
+            right: 30px;
+        }
+        display: flex;
+        justify-content: center;
+
+        & p{
+            font-size: 3vw;
+            text-align: justify;
+        }
+    }
+
+    .contenidoCol > div, .contenidoCol2 > div{
+        text-align: start;
+        align-items: flex-start;  
+        width: 330px;
+        font-size: map-get($contenido, textoMovil);
+    }
+
+    footer{
+        font: {
+            family: $letraWeb;
+            weight: bold;
+            size: 3vw;
+        }
+        clear:both;        
+        text-align: center;
+        color:black;
+        background-color: white;
+    }
+}
+
+/*responsive tablet*/
+@media (min-width: $tamanoMovil) and
+(max-width: $tamanoTablet) {
+
+
+    @each $img, $url in (TitFormacion, formacion3),
+                        (TitExperiencia, experiencia3),  
+                        (TitTecnologias, tecnologias3),
+                        (TitAptitudes, aptitudes3){                
+        section .#{$img}{
+            content:url("../img/#{$url}.png");
+        }
+    }
+
+    .contenido p{
+        font-size: map-get($contenido, textoTablet);
+        text-align: justify;
+    }
+
+    .contenidoCol > div, .contenidoCol2 > div{
+        text-align: center;
+        align-items: flex-start;  
+        width: 330px;
+        font-size: map-get($contenido, textoTablet);
+    }
+
+    footer{
+        font: {
+            family: $letraWeb;
+            weight: bold;
+            size: 2vw;
+        }
+        clear:both;  
+        text-align: center;
+        color:black;
+        background-color: white;
+    }
+}

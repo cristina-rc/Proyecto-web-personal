@@ -1,0 +1,133 @@
+@import url("sobremi.css");
+@import "_variables.scss";
+
+$tamanoIntroduccion: 20px;
+
+@mixin centrado {
+    text-align: center;
+    align-items: center;
+}
+
+@mixin styleFotoIntereses($width){
+    width: $width;
+    height: auto;
+    margin: 30px;
+}
+
+/*Artículo introducción a los intereses*/
+#introduccion{
+    font: {
+        weight: bold;
+        size: $tamanoIntroduccion;
+        family: $letraWeb;
+    }
+    display: inline-flex;
+    justify-items:center;
+    @include centrado;
+}
+
+/*fotografia intereses*/
+.fotoIntereses img{
+    @include styleFotoIntereses(30vw);
+}
+
+/*texto introducción*/
+.contenidoIntro p{
+    font: {
+        size: 1.2vw;
+        style: oblique;
+    }    
+    text-align: justify;
+}
+
+/*artículo lenguajes de programación*/
+#lenguajes{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    @include centrado;
+}
+
+/*contenedor de iconos lenguajes de programación en sucesión*/
+.contLogos{
+    margin: 0 auto;
+    justify-items: center;
+    @include centrado;
+
+    & img{
+        width: 6vw;
+    }
+}
+
+/*responsive móvil*/
+@media (max-width: 480px) {
+
+    #introduccion{
+        font: {
+            weight: bold;
+            size: $tamanoIntroduccion;
+            family: $letraWeb;
+        }       
+        display: flexbox;
+        justify-items:center;
+        align-items: center;
+        flex-direction:column;
+    }
+
+    .contlogos img{
+        width: 80px;
+    }
+
+    .fotoIntereses img{
+        @include styleFotoIntereses(300px);
+    }
+
+    .contenidoIntro{
+        margin: {
+            left: 30px;
+            right: 30px;
+        }
+    }
+
+    .contenidoIntro p{
+        font: {
+            size: 15px;
+            style: oblique;
+        }
+        text-align: justify;
+    }    
+}
+
+/*responsive tablet*/
+@media (min-width: 480px) and
+(max-width: 1024px) {
+
+    #introduccion{
+        font: {
+            weight: bold;
+            size: $tamanoIntroduccion;
+            family: $letraWeb;
+        }
+        display:flex;
+        justify-items:center;
+        flex-direction:column;
+        @include centrado;
+    }
+
+    .contlogos img{
+        width: 70px;
+    }
+
+    .fotoIntereses img{
+        @include styleFotoIntereses(400px);
+    }
+    
+    .contenidoIntro p{
+        font: {
+            size: 15px;
+            style: oblique;
+        }
+        text-align: justify;
+    }
+}
+

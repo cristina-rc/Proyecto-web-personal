@@ -1,0 +1,92 @@
+@import url("sobremi.css");
+@import "_variables.scss";
+
+$azul: #8e9aaf;
+$fondos: (
+    escritorio: "../img/fondocv.jpg",
+    movil: "../img/fondocvMovil.jpg",
+    tablet: "../img/fondocvTablet.jpg"
+);
+
+@mixin fondo($dispositivo){
+    background-position: 50%;
+    background-size: cover;
+    display: table;
+    width: 100%;
+
+    @if $dispositivo == escritorio{        
+        height: 80%;
+        background-image: url(map-get($fondos, escritorio));
+    }@else if $dispositivo == movil{
+        height: 80%;
+        background-image: url(map-get($fondos, movil));
+    }@else if $dispositivo == tablet{
+        height: 70%;
+        background-image: url(map-get($fondos, tablet));
+    }
+}
+
+/*fondo del main*/
+main{
+    @include fondo(escritorio);
+}
+
+/*artículo cv con fondo, fotografía y botón de descarga*/
+#cv{
+    font-family: $letraWeb;
+    display: inline-flex;
+    justify-items:center;
+    align-items: center;
+
+    & a {
+        display: flex;
+        min-width: 205px;
+        padding: 10px 20px;
+        margin: 0 35px;
+        border-radius: 10px;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font: {
+            family: $letraWeb;
+            size: 20px;
+            weight: bold;
+        }
+    }
+}
+
+/*estilo botón descarga*/
+.block-pad {
+    display: flex;
+    justify-content: center;
+    padding: 150px 0 150px 0;
+}
+
+.btn-hover a {
+    background: $azul;
+
+    &:hover {
+        box-shadow: inset 4px 4px 10px -1px rgba(0, 0, 0, 0.2),
+            inset -4px -4px 10px -1px rgba(255, 255, 255, 0.7);
+    }
+}
+
+/*responsive móvil, en este formato hemos eliminado la foto en miniatura del cv*/
+@media (max-width: 480px) {
+    main{
+        @include fondo(movil);
+    }
+
+    #fotocv{
+        content:url("");
+    }
+}
+
+/*responsive tablet*/
+@media (min-width: 480px) and
+(max-width: 1024px) {
+    main{
+        @include fondo(tablet);
+    }
+}

@@ -1,0 +1,178 @@
+/*a partir de esta página importamos este css para que coja el estilo del menú y el pie de página*/
+@import url("sobremi.css");
+@import "_variables.scss";
+
+$rosa2: #c69c96;
+$medidaPadding: 50px;
+
+@mixin ajusteSlider($dispositivo){
+    @if $dispositivo == movil{
+        .container{
+            padding: {
+                left: $medidaPadding;
+                bottom: $medidaPadding;
+                right: $medidaPadding;
+            }           
+            background-color: white;
+            margin: auto;
+            width: 300px;
+            height: 200px;
+            margin-bottom: 50px;
+        }
+        
+        ul.slider{
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin-bottom: 50px;
+
+            & li img{
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+              }
+        }     
+
+        .menu li a{
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            background-color: $rosa2;
+            padding: 10px;
+            width: 15px;
+            height: 15px;
+            font-size: 15px;
+            border-radius: 100%;
+        }
+
+    }@else if $dispositivo == tablet{
+        .container{
+            padding: {
+                left: $medidaPadding + 30;
+                bottom: $medidaPadding + 30;
+                right: $medidaPadding + 30;
+            }
+            margin: auto;
+            background-color: white;
+            width: 600px;
+            height: 300px;
+            margin-bottom: 100px;
+        }
+        
+        ul.slider{
+            position: relative;
+            width: 600px;
+            height: 300px;
+            margin-bottom: 130px;
+
+            & li img{
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+            }
+        }
+               
+        .menu li a{
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            background-color: $rosa2;
+            padding: 10px;
+            width: 15px;
+            height: 15px;
+            font-size: 15px;
+            border-radius: 100%;
+        }
+    }
+}
+
+/*carrusel de fotografías del portfolio*/
+#carrusel{
+  background-color: white;
+  font-family: $letraWeb;
+  margin-bottom: 30px;
+}
+
+/*container del carrusel*/
+.container{
+  margin: auto;
+  background-color: white;
+  width: 800px;
+  height: 400px;
+  padding: 30px;
+
+    & ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+/*lista de fotografías del carrusel*/
+ul.slider{
+  position: relative;
+  width: 800px;
+  height: 400px;
+  margin-bottom: 30px;
+
+    & li {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        opacity: 0;
+        width: inherit;
+        height: inherit;
+        transition: opacity .5s;
+        background:#fff;
+    
+        & img{
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        &:first-child {
+            opacity: 1;      
+        }
+
+        &:target {
+            opacity: 1;
+        }
+    }
+}
+
+/*botones del carrusel*/
+.menu{
+  text-align: center;
+  margin: 20px;
+
+    & li{
+        display: inline-block;
+        text-align: center;
+
+        & a{
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            background-color: $rosa2;
+            padding: 10px;
+            width: 20px;
+            height: 20px;
+            font-size: 20px;
+            border-radius: 100%;
+        }
+    }
+}
+
+/*Ha habido que modificar en los mediaqueries los valores de padding y margin,
+ya que los números de los sliders se quedaban detrás del container y no se visualizaban*/
+
+/*responsive móvil*/
+@media (max-width: 480px) {
+    @include ajusteSlider(movil);
+}
+
+/*responsive tablet*/
+@media (min-width: 480px) and (max-width: 1024px) { 
+    @include ajusteSlider(tablet);
+}

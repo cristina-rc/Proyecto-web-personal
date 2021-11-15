@@ -1,0 +1,209 @@
+@import "_variables.scss";
+
+$colorFondo: #f4efe5;
+$tamanoMedia: 3vw;
+
+@mixin centrado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@font-face {
+    font-family: $letraWeb;
+    src: url(../fuentes/Panton-Regular.otf);
+}
+
+body{
+    background-color: $colorFondo;
+}
+
+header{    
+    text-align: center;
+    background-color: $colorFondo;
+}
+
+/*Menú*/
+nav{
+    @include centrado;
+    margin-top: 2.5%;
+
+    & ul > li > a{
+        text-decoration: none;
+        color: black;
+
+        font: {
+            size: 1.5vw;
+            weight: bold;
+            family: $letraWeb;
+        }       
+    }
+
+    & > ul > li{
+        text-align: center;
+        display: inline;
+        padding: 15px;
+    } 
+
+    & li:hover{
+        background-color: $rosa;
+        border-radius: 1vw;
+    }
+    
+    & li > a:hover{
+        color: white;
+    }
+}
+
+/*posición página marcada en el menú*/
+.foco{
+    color: $rosa;
+}
+
+/*imagen de portada*/
+.portada{
+    width: 100%;
+}
+
+/*Pie de página*/
+footer{
+    clear:both;
+    font: {
+        family: $letraWeb; 
+        weight: bold;
+        size: 1vw;
+    }
+    padding: 30px;
+    text-align: center;
+    background-color: $colorFondo;
+    color:black;
+
+    /*logotipo*/    
+    & #nombre{
+        width: 11vw;
+    }
+
+    /*iconos redes sociales*/
+    & .media{
+        width: $tamanoMedia;
+    }
+
+    & #copyright{
+        font-weight: normal;
+    }
+    
+    & hr{
+        border-color: white;
+        height: 1px;
+    }
+}
+
+/*responsive móvil*/
+@media (max-width: $tamanoMovil) {
+
+    header {
+        width:100%;
+    }
+    
+    nav {
+        width:90%;
+        margin: {
+            top:20px;
+            left: 20px;
+            right: 20px;
+        }
+
+        & ul li {
+            float:left;
+            padding: 10px;
+        }
+
+        & ul li a {
+            text-decoration: none;
+            font: {
+                size: 4vw;  
+                weight: bold;
+                family: $letraWeb;          
+            }
+            color: black;
+            display:block;
+        }   
+
+        & ul li a:hover {
+            background: $rosa;
+            border-radius: 10%;
+        }
+    }   
+    
+    .portada{
+        content:url(../img/portadaRespMovil.png);
+        width: 100%;
+    }
+
+    footer{
+        clear:both;
+        font: {
+            family: $letraWeb;
+            weight: bold;
+            size: 3.5vw;
+        }
+        padding: 30px;
+        text-align: center;
+        background-color: $colorFondo;
+        color:black;
+
+        & #nombre{
+            width: 27vw;
+        }
+
+        & .media{
+            width: $tamanoMedia + 5;
+        }
+    }
+}
+
+/*responsive tablet*/
+@media (min-width: $tamanoMovil) and
+(max-width: $tamanoTablet) { 
+
+    nav > ul > li > a{
+        font: {
+            size: 2vw;
+            weight: bold;
+            family: $letraWeb;
+        }
+        text-decoration: none;
+        color: black;
+    }
+
+    nav li:hover{
+        background-color: $rosa;
+    }   
+
+    .portada{
+        content:url(../img/portadaRespTablet.png);
+        width: 100%;
+    }
+
+    footer{
+        font: {
+            family: $letraWeb;
+            weight: bold;
+            size: 2vw;           
+        }
+        clear:both;
+        padding: 30px;
+        text-align: center;
+        background-color: $colorFondo;
+        color:black;
+
+            
+        & #nombre{
+            width: 27vw;
+        }
+
+        & .media{
+            width: $tamanoMedia + 3;
+        }
+    }
+}
